@@ -5,24 +5,27 @@ class Biz_Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("BizCard"),
-      ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [_getCard(), _getAvatar()],
-        ),
-      ),
-    );
+    return MaterialApp(
+        title: "Simple Biz_Card",
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text("BizCard"),
+          ),
+          body: Container(
+            alignment: Alignment.center,
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: [_getCard(), _getAvatar()],
+            ),
+          ),
+        ));
   }
 
   Container _getCard() {
     return Container(
       width: 350,
       height: 200,
+      margin: const EdgeInsets.all(50.0),
       decoration: BoxDecoration(
         color: Colors.deepPurple,
         borderRadius: BorderRadius.circular(4.0),
@@ -30,10 +33,25 @@ class Biz_Card extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text("Hussein Fouani"),
+          const Text(
+            "Hussein F",
+            style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 20.9,
+                color: Colors.white),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [Icon(Icons.person_outlined), Text("Hello")],
+            children: const [
+              Icon(Icons.person_outlined),
+              Text(
+                "Hello",
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
           )
         ],
       ),
