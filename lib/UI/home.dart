@@ -13,7 +13,7 @@ class Biz_Card extends StatelessWidget {
         alignment: Alignment.center,
         child: Stack(
           alignment: Alignment.center,
-          children: [_getCard()],
+          children: [_getCard(), _getAvatar()],
         ),
       ),
     );
@@ -30,8 +30,29 @@ class Biz_Card extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Hussein Fouani"),
+          const Text("Hussein Fouani"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [Icon(Icons.person_outlined), Text("Hello")],
+          )
         ],
+      ),
+    );
+  }
+
+  Container _getAvatar() {
+    return Container(
+      width: 100,
+      height: 100,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(50.0),
+        ),
+        border: Border.all(color: Colors.redAccent, width: 1.2),
+        image: const DecorationImage(
+            image: NetworkImage("https://picsum.photos/300/300"),
+            fit: BoxFit.cover),
       ),
     );
   }
